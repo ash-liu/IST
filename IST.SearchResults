@@ -1,1 +1,3 @@
----- GUI_TOUCH_EXEC Matches (0 in 0 files) ----
+---- TOUCH_X_ActivateX Matches (2 in 2 files) ----
+GUI.h (gui\ucgui\core):#define TOUCH_X_ActivateX  GUI_TOUCH_X_ActivateX
+GUI_TOUCH_DriverAnalog.c (gui\ucgui\core):    TOUCH_X_ActivateX();  /* Prepare Y- measurement */
