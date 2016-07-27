@@ -32,6 +32,13 @@ Purpose     : Shows lines with different antialiasing qualities
 
   Draws lines with different antialiasing factors
 */
+
+static const char content[] = "本汉化只是为了方便用户使用而制作，你可以\n"
+"免费使用该软件，我们不对该软件可能存在的\n"
+"问题负责.\n\n"
+"关于ProICD2，Picmate2004仿真器的任何问题请访\n"
+"问我们的网站.";
+
 static void _DemoAntialiasing(void) {
   int i, x1, x2, y1, y2;
   const GUI_FONT *font_old;
@@ -43,9 +50,9 @@ static void _DemoAntialiasing(void) {
   GUI_SetPenShape(GUI_PS_FLAT);
   GUI_Clear();
   /* draw headline */
-  font_old = GUI_SetFont(&GUI_Font24_ASCII);
+  font_old = GUI_SetFont(&GUI_FontHZ12);
   GUI_SetTextAlign(GUI_TA_HCENTER);
-  GUI_DispStringAt("HELLO WORLD!!", 300, 240);
+  GUI_DispStringAt(content, 300, 240);
   GUI_Delay(7500);
 }
 

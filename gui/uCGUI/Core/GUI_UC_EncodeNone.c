@@ -33,7 +33,12 @@ Purpose     : Encoding routines for non unicode systems (default)
 *   Return the UNICODE character code of the current character.
 */
 static U16 _GetCharCode(const char GUI_UNI_PTR * s) {
-  return *(const U8 GUI_UNI_PTR *)s;
+	if (*s > 0xA0) {
+		return *(const U16 GUI_UNI_PTR *)s;
+	}
+	else {
+		return *(const U8 GUI_UNI_PTR *)s;
+	}
 }
 
 /*********************************************************************
@@ -45,6 +50,9 @@ static U16 _GetCharCode(const char GUI_UNI_PTR * s) {
 */
 static int _GetCharSize(const char GUI_UNI_PTR * s) {
   GUI_USE_PARA(s);
+  if (*s > 0xA0) {
+	return 2;
+  }
   return 1;
 }
 
@@ -56,8 +64,11 @@ static int _GetCharSize(const char GUI_UNI_PTR * s) {
 *   Return the number of bytes needed for the given character.
 */
 static int _CalcSizeOfChar(U16 Char) {
-  GUI_USE_PARA(Char);
-  return 1;
+	GUI_USE_PARA(Char);
+	if (Char > 0xA0A0) {
+		return 2;
+	}
+	return 1;
 }
 
 /*********************************************************************
@@ -68,8 +79,14 @@ static int _CalcSizeOfChar(U16 Char) {
 *   Encode character into 1/2/3 bytes.
 */
 static int _Encode(char *s, U16 Char) {
-  *s = (U8)(Char);
-  return 1;
+	if (Char > 0xA0A0) {
+		*((U16 *)s) = (U16)Char;
+		return 2;
+	}
+	else {
+		*((U8 *)s) = (U8)Char;
+		return 1;
+	}
 }
 
 /*********************************************************************

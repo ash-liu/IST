@@ -304,6 +304,17 @@ DECLARE_FONT(PROP_AA4);
 	GUIPROP_AA4_IsInFont,             \
   GUI_ENCODE_SJIS
 
+
+// ash add
+#define GUI_FONTTYPE_PROP_X  \
+	GUIPROP_X_DispChar,\
+	GUIPROP_X_GetCharDistX,\
+	GUIMONO_GetFontInfo, \
+	GUIMONO_IsInFont, \
+	(tGUI_ENC_APIList*)0
+
+
+
 #if defined(__cplusplus)
   }
 #endif

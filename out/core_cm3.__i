@@ -1,4 +1,4 @@
--c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I.\CMSIS -I.\fat -I.\FWlib\inc -I.\sdcard -I.\user 
+-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork -I.\CMSIS -I.\fat -I.\FWlib\inc -I.\sdcard -I.\user -I.\gui -I.\lcd -I.\touch -I.\gui\uCGUI\AntiAlias -I.\gui\uCGUI\Config -I.\gui\uCGUI\ConvertColor -I.\gui\uCGUI\ConvertMono -I.\gui\uCGUI\Core -I.\gui\uCGUI\Font -I.\gui\uCGUI\JPEG -I.\gui\uCGUI\MemDev -I.\gui\uCGUI\MultiLayer -I.\gui\uCGUI\Widget -I.\gui\uCGUI\WM 
 -I C:\MDK\ARM\RV31\INC 
 -I C:\MDK\ARM\CMSIS\Include 
 -I C:\MDK\ARM\Inc\ST\STM32F10x 
