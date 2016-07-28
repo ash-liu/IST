@@ -3,7 +3,7 @@
 #include "ff.h"
 
 //字模数据的暂存数组,以单个字模的最大字节数为设定值
-#define BYTES_PER_FONT      128
+#define BYTES_PER_FONT      42*6
 static U8 GUI_FontDataBuf[BYTES_PER_FONT];
 
 /*---------------------------------------------------------------------------*/
