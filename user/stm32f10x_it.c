@@ -24,6 +24,7 @@
 #include "stdio.h"
 #include "sdcard.h"
 #include "gui.h"
+#include "cmd.h"
 //=============================================================================
 
 /* Global variables  ---------------------------------------------------------*/
@@ -519,6 +520,18 @@ void TIM4_IRQHandler(void)
 }
 
 /*******************************************************************************
+* Function Name  : TIM5_IRQHandler
+* Description    : This function handles TIM5 global interrupt request.
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void TIM5_IRQHandler(void)
+{
+	timer_overtime();
+}
+
+/*******************************************************************************
 * Function Name  : SDIO_IRQHandler
 * Description    : This function handles SDIO global interrupt request.
 * Input          : None
@@ -618,6 +631,7 @@ void USART1_IRQHandler(void)
 *******************************************************************************/
 void USART2_IRQHandler(void)
 {
+	receive_cmd_irq();
 }
 
 /*******************************************************************************

@@ -72,20 +72,25 @@ static void _DemoAntialiasing(void) {
   */
 
 	// line
-	GUI_SetColor(GUI_YELLOW);
+	GUI_SetColor(GUI_YELLOW);	
+	GUI_DrawLine(0, 0, 853, 0);
+	GUI_DrawLine(0, 0, 0, 479);
+	GUI_DrawLine(853, 0, 853, 479);
+	GUI_DrawLine(0, 479, 853, 479);
+
 	GUI_FillRect(213, 0, 215, 480);
 	GUI_FillRect(0, 239, 213, 241);
 
 	//text data
 	GUI_SetColor(GUI_WHITE);
-	GUI_DispStringAt("2016-07-28", 10, 0+10);
+	GUI_DispStringAt("2016/07/28", 10, 0+10);
 	GUI_DispStringAt("星期四", 10, 48+10);
 	GUI_DispStringAt("22:55", 10, 48*2+10);
 
 	//text 
 	GUI_SetColor(GUI_WHITE);
 	GUI_DispStringAt("晴转多云", 10, 0+10+242);
-	GUI_DispStringAt("29度~39度", 10, 48+10+242);
+	GUI_DispStringAt("29度/39度", 10, 48+10+242);
 	GUI_DispStringAt("室温:32度", 10, 48*2+10+242);
 
 	// text
@@ -98,7 +103,7 @@ static void _DemoAntialiasing(void) {
 	
 	
   
-	GUI_Delay(15000);
+	//GUI_Delay(15000);
 
 
 }
@@ -114,8 +119,8 @@ static void _DemoAntialiasing(void) {
 
 void MainTask(void) {
   GUI_Init();
-  while (1) {
-    _DemoAntialiasing();
-  }
+//  while (1) {
+   _DemoAntialiasing();
+//  }
 }
 

@@ -6,6 +6,8 @@
 #include "gui.h"
 #include "Tiky_LCD.h"
 #include "diskio.h"
+#include "info.h"
+#include "view.h"
 
 /* Private date ---------------------------------------------------------*/
 
@@ -40,60 +42,6 @@ void NVIC_Configuration(void)
   NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
   NVIC_Init(&NVIC_InitStructure);
 }
-
-
-/*************************************************************************
- * Function Name: Serial_Init
- * Description: Init USARTs
- *************************************************************************/
-void Serial_Init(void)
-{
-  GPIO_InitTypeDef GPIO_InitStructure;
-  USART_InitTypeDef USART_InitStructure;
- 
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-  RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
-  RCC_APB1PeriphResetCmd(RCC_APB1Periph_USART2, DISABLE);
-
-  /* Configure USART2 Tx (PA.02) as alternate function push-pull */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2;
-  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-  /* Configure USART1 Rx (PA.03) as input floating */
-  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;
-  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;
-  GPIO_Init(GPIOA, &GPIO_InitStructure);
-
-/* USART1 configuration ------------------------------------------------------*/
-  // USART1 configured as follow:
-  USART_InitStructure.USART_BaudRate = 115200;
-  USART_InitStructure.USART_WordLength = USART_WordLength_8b;
-  USART_InitStructure.USART_StopBits = USART_StopBits_1;
-  USART_InitStructure.USART_Parity = USART_Parity_No;
-  USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
-  USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
-
-  /* Configure the USART2 */
-  USART_Init(USART2, &USART_InitStructure);
-
-  /* Enable the USART Transmoit interrupt: this interrupt is generated when the 
-     USART1 transmit data register is empty */  
- // USART_ITConfig(USART2, USART_IT_TXE, ENABLE);
-
-  /* Enable the USART Receive interrupt: this interrupt is generated when the 
-     USART1 receive data register is not empty */
-//  USART_ITConfig(USART2, USART_IT_RXNE, ENABLE);
-
-  /* Enable USART2 */
-  USART_Cmd(USART2, ENABLE);
-
-  // 随便发一个数据，clear flag 否则第一个字符发送不出去
-  USART_SendData(USART2, 0x00);
-  while (!(USART2->SR & USART_FLAG_TXE));
-}
-
 
 void OutPutFile(void)
 {
@@ -187,7 +135,7 @@ int init_fatfs()
 	return 0;
 }
 
-extern void MainTask();
+//extern void MainTask();
 
 int main(void)
 {	
@@ -196,7 +144,7 @@ int main(void)
 
   	SystemInit();//初始化STM32
 	NVIC_Configuration(); // init sdio IRQ
-	Serial_Init(); // 115200,8,n,1
+	init_cmd(); 
 
 	result = init_sdcard();
 	if (result > 0) {
@@ -221,8 +169,9 @@ int main(void)
 	SysTick_Config(SystemFrequency / 100);  //set system tick as 10ms
 	GUI_Init();	//init GUI
 
+	init_ui();
 	while(1) {
-		MainTask();
+		loop_info();
 	}
 	
 }

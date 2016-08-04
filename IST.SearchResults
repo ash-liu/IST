@@ -1,68 +1,11 @@
----- GUI_CHARINFO Matches (67 in 54 files) ----
-F08_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO Font8_1_CharInfo[96] = {
-F08_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font8_ASCII_CharInfo[95] = {
-F10S_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO Font10S_1_CharInfo[96] = {
-F10S_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font10S_ASCII_CharInfo[96] = {
-F10_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO Font10_1_CharInfo[96] = {
-F10_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font10_ASCII_CharInfo[96] = {
-F13B_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13B_1_CharInfo[96] = {
-F13B_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13B_ASCII_CharInfo[95] = {
-F13HB_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13HB_1_CharInfo[96] = {
-F13HB_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13HB_ASCII_CharInfo[95] = {
-F13H_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13H_1_CharInfo[96] = {
-F13H_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13H_ASCII_CharInfo[95] = {
-F13_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13_1_CharInfo[96] = {
-F13_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13ASCII_CharInfo[95] = {
-F16B_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font16B_1_CharInfo[96] = {
-F16B_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font16B_ASCII_CharInfo[95] = {
-F16_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfo_Font16_1[96] = {
-F16_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfo_Font16ASCII[96] = {
-F16_HK.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font16_HK_CharInfo[169] = {
-F24B_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font24B_1_CharInfo[96] = {
-F24B_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font24B_ASCII_CharInfo[95] = {
-F24_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font24_1_CharInfo[96] = {
-F24_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font24_ASCII_CharInfo[95] = {
-F32B_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font32B_1_CharInfo[96] = {
-F32B_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font32B_ASCII_CharInfo[95] = {
-F32_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font32_1_CharInfo[96] = {
-F32_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font32_ASCII_CharInfo[95] = {
-F8x10_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font8x10ASCII_CharInfo[96] = {
-F8x12_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_Font8x12ASCII_CharInfo[96] = {
-F8x13_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfoF8x13_1[96] = {
-F8x13_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfoF8x13_ASCII[96] = {
-F8x15B_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfoF8x15B_1[96] = {
-F8x15B_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfoF8x15B_ASCII[96] = {
-FComic18B_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO CharInfoComic18B_1_160_255[193] = {
-FComic18B_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO CharInfo18B_ASCII[97] = {
-FComic24B_1.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO CharInfo24B_160_255[] = {
-FComic24B_ASCII.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO CharInfo24B_ASCII[96] = {
-FD32.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO CharInfo32[] = {
-FD36x48.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_FontD36x48_CharInfo[15] = {
-FD48.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_FontD48_CharInfo[15] = {
-FD48x64.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_FontD48x64_CharInfo[15] = {
-FD60x80.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_FontD60x80_CharInfo[15] = {
-FD64.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_FontD64_CharInfo[15] = {
-FD80.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_FontD80_CharInfo[15] = {
-GUIAAChar.c (gui\ucgui\antialias):    const GUI_CHARINFO* pCharInfo = pProp->paCharInfo+(c-pProp->First);
-GUIAAChar2.c (gui\ucgui\antialias):    const GUI_CHARINFO* pCharInfo = pProp->paCharInfo+(c-pProp->First);
-GUIAAChar4.c (gui\ucgui\antialias):    const GUI_CHARINFO* pCharInfo = pProp->paCharInfo+(c-pProp->First);
-GUICharP.c (gui\ucgui\core):    const GUI_CHARINFO GUI_UNI_PTR * pCharInfo = pProp->paCharInfo+(c-pProp->First);
-GUICharPEx.c (gui\ucgui\core):		const GUI_CHARINFO GUI_UNI_PTR * pCharInfo = pProp->paCharInfo;
-GUIDEMO_Font.c (gui\ucgui\guidemo):static const GUI_CHARINFO _FontSJIS16_CharInfo[34] = {
-GUIDEMO_Font.c (gui\ucgui\guidemo2):static const GUI_CHARINFO _FontSJIS16_CharInfo[34] = {
-GUIType.h (gui\ucgui\core):} GUI_CHARINFO;
-GUIType.h (gui\ucgui\core):  const GUI_CHARINFO GUI_UNI_PTR * paCharInfo;            /* address of first character    */
-GUIType.h (gui\ucgui\core):  const GUI_CHARINFO* paCharInfo;    /* address of first character    */
-GUI_Font12.c (gui\ucgui\font):GUI_CONST_STORAGE GUI_CHARINFO GUI_FontHZ12_CharInfo[2] = {
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font24B_ASCII_CharInfo[95];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font24_ASCII_CharInfo[95];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font32B_ASCII_CharInfo[95];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font32_ASCII_CharInfo[95];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfoF8x13_ASCII[96];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_CharInfoF8x15B_ASCII[96];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO CharInfo18B_ASCII[97];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO CharInfo24B_ASCII[96];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13H_ASCII_CharInfo[95];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font13HB_ASCII_CharInfo[95];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font16_HK_CharInfo[169];
-GUI_FontIntern.h (gui\ucgui\core):extern GUI_CONST_STORAGE GUI_CHARINFO GUI_Font16B_ASCII_CharInfo[95];
+---- info_buf_length Matches (10 in 3 files) ----
+Cmd.c (user):			info_buf_length = cmd_length;
+Info.c (user):int info_buf_length = 0;
+Info.c (user):	while(point < info_buf_length) {
+Info.c (user):		if(point + INFO_LEVEL_BYTES > info_buf_length) {
+Info.c (user):		if(point + INFO_SID_BYTES > info_buf_length) {
+Info.c (user):		if(point + INFO_LENGTH_BYTES > info_buf_length) {
+Info.c (user):		if(point + length > info_buf_length) {
+Info.c (user):	if (info_buf_length > 0) {
+Info.c (user):		info_buf_length = 0;
+Info.h (user):extern int info_buf_length;

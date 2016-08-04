@@ -166,7 +166,7 @@
             <DriverSelection>4099</DriverSelection>
           </Flash1>
           <Flash2>Segger\JL2CM3.dll</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
         </Utilities>
         <TargetArmAds>
@@ -570,6 +570,21 @@
               <FileName>test_gui.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\user\test_gui.c</FilePath>
+            </File>
+            <File>
+              <FileName>cmd.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\cmd.c</FilePath>
+            </File>
+            <File>
+              <FileName>info.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\info.c</FilePath>
+            </File>
+            <File>
+              <FileName>view.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\view.c</FilePath>
             </File>
           </Files>
         </Group>
