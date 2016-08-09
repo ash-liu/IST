@@ -25,6 +25,11 @@ void init_ui(void);
 
 void show_info(struct info *h);
 
+void show_time(char h, char m, char s);
+
+void show_date(int Y, char M, char D, char W) ;
+
+void show_temp(char low, char high, const char *);
 
 #endif
 

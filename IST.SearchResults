@@ -1,11 +1,2 @@
----- info_buf_length Matches (10 in 3 files) ----
-Cmd.c (user):			info_buf_length = cmd_length;
-Info.c (user):int info_buf_length = 0;
-Info.c (user):	while(point < info_buf_length) {
-Info.c (user):		if(point + INFO_LEVEL_BYTES > info_buf_length) {
-Info.c (user):		if(point + INFO_SID_BYTES > info_buf_length) {
-Info.c (user):		if(point + INFO_LENGTH_BYTES > info_buf_length) {
-Info.c (user):		if(point + length > info_buf_length) {
-Info.c (user):	if (info_buf_length > 0) {
-Info.c (user):		info_buf_length = 0;
-Info.h (user):extern int info_buf_length;
+---- show_info_list Matches (1 in 1 files) ----
+Info.c (user):int show_info_list(struct info *h)

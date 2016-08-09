@@ -9,7 +9,7 @@
 
 enum{
 	CMD_INFO = 0xA0,
-	CMD_TIME,
+	CMD_DATETIME,
 	CMD_TEMP,
 	CMD_SYSTEM,
 };
@@ -29,7 +29,7 @@ enum {
 void receive_cmd_irq(void);
 void timer_overtime(void);
 int init_cmd(void);
-
+void loop_cmd(void);
 
 #endif
 

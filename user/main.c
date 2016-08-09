@@ -6,7 +6,6 @@
 #include "gui.h"
 #include "Tiky_LCD.h"
 #include "diskio.h"
-#include "info.h"
 #include "view.h"
 
 /* Private date ---------------------------------------------------------*/
@@ -171,7 +170,7 @@ int main(void)
 
 	init_ui();
 	while(1) {
-		loop_info();
+		loop_cmd();
 	}
 	
 }

@@ -2,6 +2,8 @@
 #include "stm32f10x.h"
 #include <string.h>
 #include "info.h"
+#include "datetime.h"
+#include "temp.h"
 
 static char cmd_buf[CMD_RECEIVE_LENGTH] = {0};
 static int cmd_buf_point = 0;
@@ -145,6 +147,8 @@ int init_cmd()
 
 	//init all the cmd here
 	init_info(); 
+	init_datetime();
+	init_temp();
 	
 	return 0;
 }
@@ -183,12 +187,14 @@ static int check_cmd_length(const char *buf, int *len)
 void distribute_cmd()
 {
 	switch (cmd_type) {
-		case CMD_TIME:
-			//copy_context_time(cmd_buf, cmd_length);
+		case CMD_DATETIME:
+			memcpy(datetime_buf, cmd_buf, cmd_length);
+			datetime_buf_length = cmd_length;
 			break;
 
 		case CMD_TEMP:
-			//copy_context_temp(cmd_buf, cmd_length);
+			memcpy(temp_buf, cmd_buf, cmd_length);
+			temp_buf_length = cmd_length;
 			break;
 
 		case CMD_SYSTEM:
@@ -204,6 +210,13 @@ void distribute_cmd()
 	}	
 }
 
+
+void loop_cmd()
+{
+	loop_info();		
+	loop_datetime();
+	loop_temp();	
+}
 
 
 void receive_cmd_irq()

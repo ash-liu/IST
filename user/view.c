@@ -10,9 +10,9 @@ void GUI_DispStringInRectWrap(const char GUI_UNI_PTR * s, GUI_RECT * pRect, int 
 
 //for test
 static const char info1[]="1. 从7月28日18:00到7月29日18:00停电,请注意时间.\n";
-static const char info2[]="2. 气温过高,请注意防暑.\n";
-static const char info3[]="3. 当月电费为88元.\n";
 //---------
+
+const char *week_value[7]={"星期一", "星期二", "星期三", "星期四", "星期五", "星期六", "星期日"};
 
 
 void init_ui()
@@ -124,11 +124,51 @@ void show_info(struct info *h)
 
 
 
-void show_time()
+void show_time(char h, char m, char s)
 {
+	char buf[6];
 
+	if (s%2) {
+		sprintf(buf, "%02d:%02d", h, m);
+	}
+	else {
+		sprintf(buf, "%02d %02d", h, m);
+	}
+
+	GUI_SetColor(GUI_WHITE);
+	//GUI_ClearRect(10, 48*2+10, 10+18*5, 48*3+10);
+	GUI_DispStringAt(buf, 10, 48*2+10);	
 }
 
+
+void show_date(int Y, char M, char D, char W) 
+{
+	char buf[11];
+
+	//GUI_ClearRect(10, 10, 212, 10+48*2);
+	sprintf(buf, "%04d/%02d/%02d", Y, M, D);
+	GUI_SetColor(GUI_WHITE);
+	GUI_DispStringAt(buf, 10, 10);
+
+	sprintf(buf, "%s", week_value[W]);
+	GUI_SetColor(GUI_WHITE);
+	GUI_DispStringAt(buf, 10, 10 + 48);
+}
+
+
+
+void show_temp(char low, char high, const char *weather_buf)
+{
+	char buf[16];
+
+	GUI_ClearRect(10, 0+10+242, 212, LCD_YSIZE - 2);
+
+	GUI_SetColor(GUI_WHITE);
+	GUI_DispStringAt(weather_buf, 10, 0+10+242);
+	sprintf(buf, "%d度/%d度", low, high);
+	GUI_DispStringAt(buf, 10, 48+10+242);
+	GUI_DispStringAt("室温:32度", 10, 48*2+10+242);
+}
 
 
 

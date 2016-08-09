@@ -11,7 +11,7 @@ GUI_CONST_STORAGE GUI_CHARINFO GUI_FontHZ42_CharInfo[2] = {
 
 GUI_CONST_STORAGE GUI_FONT_PROP GUI_FontHZ42_PropHZ= {
       0xA1A1, //第一个字符
-      0xF7FE, //最后一个字符
+      0xFEFE, //最后一个字符
       &GUI_FontHZ42_CharInfo[1], //字符信息
       (void *)0,
 };

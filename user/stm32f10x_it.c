@@ -25,6 +25,8 @@
 #include "sdcard.h"
 #include "gui.h"
 #include "cmd.h"
+#include "info.h"
+#include "datetime.h"
 //=============================================================================
 
 /* Global variables  ---------------------------------------------------------*/
@@ -191,7 +193,10 @@ void TAMPER_IRQHandler(void)
 *******************************************************************************/
 void RTC_IRQHandler(void)
 {
-
+	if (RTC_GetITStatus(RTC_IT_SEC) != RESET) {
+		RTC_ClearITPendingBit(RTC_IT_SEC);
+		datetime_1s_irq();
+	}
 }
 
 

@@ -20,6 +20,21 @@ def build_cmd(info_list):
 	cmd = struct.pack("!Bh", 0xA0, len(cmd))+ cmd
 	return cmd
 
+def build_datetime(Y, M, D, h, m, s):
+	cmd = ""
+	cmd = struct.pack("!BhBBBBBB", 0xA1,6,Y,M,D,h,m,s)
+	return cmd
+
+def build_temp(low, high, weather):
+	cmd = ""
+	w = weather.decode('utf-8').encode('gb2312')
+	cmd = struct.pack("!bbB", low, high, len(w)) + w
+
+	cmd = struct.pack("!Bh", 0xA2, len(cmd)) + cmd
+	print (repr(cmd))
+	return cmd
+
+
 def get_available_com():
 	''' 得到可用的com口列表 '''
 	com_list = []
@@ -41,6 +56,7 @@ ser = None
 if len(com_list) > 0 :
 	ser = serial.Serial(com_list[0][0])
 
+
 while True :
 	for i in info_list:
 		i[0] = '1'
@@ -60,6 +76,11 @@ while True :
 	ser.write(cmd)
 
 	time.sleep(1)
+	break
 
 
+cmd = build_datetime(16, 12, 30, 23, 59, 55)
+ser.write(cmd)
 
+cmd = build_temp(10,30,"多云转晴")
+ser.write(cmd)

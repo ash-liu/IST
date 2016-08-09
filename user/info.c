@@ -89,7 +89,7 @@ int parse_info_list(struct info **h)
 		content = (char *)malloc(length);
 		memcpy(content, info_buf+point, length);
 		// MUST BE STRING !!
-		content[length-1] = 0;	
+		content[length] = 0;	
 		point += length;
 
 		//build info
@@ -124,23 +124,6 @@ int free_info_list(struct info *h)
 
 	return 0;
 }
-
-
-int show_info_list(struct info *h)
-{
-	int i=0;
-	while (h != NULL) {
-		// text
-		GUI_SetColor(GUI_RED);
-		GUI_DispStringAt(h->content, 216+10, 10+i*48);
-
-		i++;
-		h = h->next;
-	}
-	
-	return 0;
-}
-
 
 
 void init_info()
